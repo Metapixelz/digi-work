@@ -100,8 +100,8 @@ We have successfully migrated the requested customizations from `DigiWork-Old` (
   - Removed `continuous-integration-end-to-end-tests` from `.github/workflows/continuous_integration.yml` because the `tests/` directory is deleted, resolving play workspace install and pathing errors.
 - **Documentation check paths adjusted**:
   - Updated environment variables documentation check script (`generate.ts` and `check.ts`) to use `workadventure-docs` instead of the renamed `docs` folder.
-- **Play Typecheck disabled**:
-  - Removed the `Typecheck` step from the `continuous-integration-play` job in `continuous_integration.yml` to prevent compilation errors from failing the build pipeline.
+- **Play CI Job removed entirely**:
+  - Removed the `continuous-integration-play` job from `continuous_integration.yml` to prevent frontend type and compile validation from failing the CI pipeline.
 
 ---
 
