@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const notification: BaseTranslation = {
+const translation: Translation = {
     discussion: "{name} می‌خواهد با شما صحبت کند",
     message: "{name} یک پیام ارسال می‌کند",
     chatRoom: "در اتاق چت",
@@ -26,6 +26,10 @@ const notification: BaseTranslation = {
     },
     addNewTag: "افزودن یک تگ جدید: '{tag}'",
     screenSharingError: "نمی‌توان اشتراک‌گذاری صفحه را شروع کرد",
+    notificationSentToMuteMicrophone: "A notification was sent to {name} to mute their microphone",
+    notificationSentToMuteCamera: "A notification was sent to {name} to mute their camera",
+    recordingStarted: "One person in the discussion has started a recording.",
+    urlCopiedToClipboard: "Url copied to clipboard",
 };
 
-export default notification;
+export default translation;

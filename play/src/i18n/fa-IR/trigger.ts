@@ -1,7 +1,7 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const trigger: BaseTranslation = {
-    cowebsite: `[SPACE] برای باز کردن وب‌سایت 👀`,
+const translation: Translation = {
+    cowebsite: "[SPACE] برای باز کردن وب‌سایت 👀",
     jitsiRoom: "[SPACE] برای ورود به Jitsi 👀",
     newTab: "[SPACE] برای باز کردن تب جدید 👀",
     object: "[SPACE] برای تعامل با آن 👀",
@@ -12,6 +12,7 @@ const trigger: BaseTranslation = {
         newTab: "👆 برای باز کردن تب جدید 👀",
         object: "👆 برای تعامل با آن 👀",
     },
+    escapeKeyboard: "[ESCAPE]",
 };
 
-export default trigger;
+export default translation;

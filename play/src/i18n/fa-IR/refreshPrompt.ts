@@ -1,7 +1,7 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const refreshPrompt: BaseTranslation = {
+const translation: Translation = {
     refresh: "رفرش",
 };
 
-export default refreshPrompt;
+export default translation;

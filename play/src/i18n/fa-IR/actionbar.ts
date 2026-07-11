@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const actionbar: BaseTranslation = {
+const translation: Translation = {
     understand: "متوجه شدم!",
     edit: "ویرایش",
     cancel: "لغو",
@@ -19,7 +19,6 @@ const actionbar: BaseTranslation = {
     todoList: "لیست کارها",
     woka: "شخصی‌سازی آواتار",
     companion: "اضافه کردن همراه",
-    //megaphone: "Use megaphone",
     test: "تست تنظیمات",
     editCamMic: "ویرایش دوربین / میکروفون",
     allSettings: "همه تنظیمات",
@@ -42,11 +41,22 @@ const actionbar: BaseTranslation = {
         disabled: "میکروفون شما غیرفعال است",
         activate: "فعال‌سازی میکروفون",
         noDevices: "هیچ میکروفونی یافت نشد",
+        noSoundWarning:
+            "No sound detected from your microphone. There may be a problem; try changing your microphone in settings.",
+        noSoundWarningPressEnter: "No sound detected from your microphone. Press Enter to open settings.",
+        advancedNoiseReduction: "Advanced noise reduction",
+        noiseSuppressionInitializing: "Initializing custom noise suppression...",
+        noiseSuppressionUnsupported: "This browser cannot run custom noise suppression.",
+        noiseSuppressionError: "Custom noise suppression failed. Falling back to browser native noise suppression.",
+        openSettings: "Open settings",
+        ignore: "Ignore",
     },
     speaker: {
         disabled: "بلندگوی شما غیرفعال است",
         activate: "فعال‌سازی بلندگو",
         noDevices: "هیچ بلندگویی یافت نشد",
+        noDevicesDesc:
+            "Your browser does not list any selectable audio output. Some browsers limit this (for example Safari). Try another browser, reconnect headphones or speakers, check your system sound settings and your computer's configuration (privacy, devices).",
     },
     status: {
         ONLINE: "آنلاین",
@@ -84,6 +94,9 @@ const actionbar: BaseTranslation = {
         audioManager: {
             title: "میزان صدای محیط",
             desc: "میزان صدای امبینت را تنظیم کنید.",
+            pause: "Click here to pause audio",
+            play: "Click here to play audio",
+            stop: "Click here to stop audio",
         },
         audioManagerNotAllowed: {
             title: "صداهای محیط مسدود شده است",
@@ -100,6 +113,9 @@ const actionbar: BaseTranslation = {
         lock: {
             title: "قفل کردن گفتگو",
             desc: "با فعال کردن این ویژگی، اطمینان حاصل می‌کنید که هیچ‌کس نمی‌تواند به بحث بپیوندد. شما ارباب فضای خود هستید و فقط کسانی که از قبل حضور دارند می‌توانند تعامل داشته باشند.",
+            areaPickerTitle: "Choose area to lock/unlock",
+            bubbleLabel: "Discussion bubble",
+            unnamedArea: "Unnamed Area",
         },
         mic: {
             title: "فعال/غیرفعال کردن میکروفون",
@@ -137,6 +153,17 @@ const actionbar: BaseTranslation = {
             title: "لیست کارها",
             desc: "لیست کارهای خود را مدیریت کنید.",
         },
+        megaphone: {
+            title: "Stop megaphone",
+            desc: "Stop broadcasting your message to all users.",
+        },
+        pictureInPicture: {
+            title: "Picture in picture",
+            descDisabled:
+                "Unfortunately, this feature is not available on your device ❌. Please try using another device or browser, like Chrome or Edge, to access this feature.",
+            desc: "You can use the picture in picture feature to watch a video or a presentation while you are in a conversation. Just click on the picture in picture icon and enjoy your content.",
+        },
+        videoNotSupported: "Your browser does not support the video tag.",
     },
     listStatusTitle: {
         enable: "تغییر وضعیت",
@@ -167,5 +194,30 @@ const actionbar: BaseTranslation = {
         hideToolText: "پنهان کردن",
         removeHighlightText: "حذف",
     },
+    participantListPlaceholder: "Participants list",
+    participantSendMessage: "Send a message",
+    participantInviteUser: "Invite a user",
+    participantExitFullscreen: "Exit fullscreen",
+    installPwa: "Install Web App",
+    background: {
+        settings: "Settings",
+        cameraBackground: "Camera background",
+        noEffect: "No effect",
+        blur: "Blur",
+        blurSmall: "Small blur",
+        blurMiddle: "Middle blur",
+        blurHigh: "High blur",
+        images: "Images",
+        videos: "Videos",
+    },
+    personalDesk: {
+        label: "Walk to my desk",
+        unclaim: "Unclaim my desk",
+        errorNoUser: "Unable to find your user information",
+        errorNotFound: "You don't have a personal desk yet",
+        errorMoving: "Unable to reach your personal desk",
+        errorUnclaiming: "Unable to unclaim your personal desk",
+    },
 };
-export default actionbar;
+
+export default translation;

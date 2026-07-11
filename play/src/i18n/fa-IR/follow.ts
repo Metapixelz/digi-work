@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const follow: BaseTranslation = {
+const translation: Translation = {
     interactStatus: {
         following: "در حال دنبال کردن {leader}",
         waitingFollowers: "در انتظار تأیید دنبال‌کنندگان",
@@ -22,6 +22,7 @@ const follow: BaseTranslation = {
         yes: "بله",
         no: "خیر",
     },
+    actionName: "Locate",
 };
 
-export default follow;
+export default translation;

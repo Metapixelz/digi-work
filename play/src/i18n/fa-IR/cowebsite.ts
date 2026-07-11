@@ -1,11 +1,10 @@
-import type { DeepPartial } from "../DeepPartial";
 import type { Translation } from "../i18n-types";
 
-const companion: DeepPartial<Translation["cowebsite"]> = {
+const translation: Translation = {
     open: "باز کردن",
     close: "بستن",
     bigBlueButton: "BigBlueButton",
     jitsi: "Jitsi",
 };
 
-export default companion;
+export default translation;

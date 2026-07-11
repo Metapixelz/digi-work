@@ -27,7 +27,7 @@ async function main() {
     const markdown = generateMarkdown(playVars, backVars, mapStorageVars);
 
     // Write to file
-    const outputPath = fileURLToPath(new URL("../../../../docs/others/self-hosting/env-variables.md", import.meta.url));
+    const outputPath = fileURLToPath(new URL("../../../../workadventure-docs/others/self-hosting/env-variables.md", import.meta.url));
     fs.writeFileSync(outputPath, markdown, "utf-8");
 
     console.log(`\n✅ Documentation generated successfully!`);

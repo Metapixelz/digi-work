@@ -1,7 +1,7 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const login: BaseTranslation = {
+const translation: Translation = {
     optional: "اختیاری",
 };
 
-export default login;
+export default translation;

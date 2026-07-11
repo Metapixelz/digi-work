@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const companion: BaseTranslation = {
+const translation: Translation = {
     select: {
         title: "همراه خود را انتخاب کنید",
         any: "بدون همراه",
@@ -8,4 +8,4 @@ const companion: BaseTranslation = {
     },
 };
 
-export default companion;
+export default translation;

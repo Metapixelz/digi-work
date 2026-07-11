@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const login: BaseTranslation = {
+const translation: Translation = {
     input: {
         name: {
             placeholder: "نام خود را وارد کنید",
@@ -17,4 +17,4 @@ const login: BaseTranslation = {
     continue: "ادامه",
 };
 
-export default login;
+export default translation;

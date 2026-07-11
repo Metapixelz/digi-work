@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const externalModule: BaseTranslation = {
+const translation: Translation = {
     status: {
         onLine: "وضعیت آنلاین است ✅",
         offLine: "وضعیت آفلاین است ❌",
@@ -38,6 +38,9 @@ const externalModule: BaseTranslation = {
         logout: "خروج",
         guilds: "سرورهای Discord",
         guildExplain: "کانال‌هایی را که می‌خواهید به رابط چت digi-work اضافه کنید، انتخاب کنید.\n",
+        back: "Back",
+        tokenPlaceholder: "Your Discord Token",
+        loginWithQrCode: "Login with QR Code",
     },
     outlook: {
         signIn: "ورود با Outlook",
@@ -48,9 +51,17 @@ const externalModule: BaseTranslation = {
         popupScopeToSyncTask: "همگام‌سازی وظایف من",
         popupCancel: "لغو",
         isSyncronized: "همگام‌سازی شده با Outlook",
-        popupScopeIsConnectedExplainText:
-            "شما از قبل متصل هستید، لطفاً برای خروج و اتصال مجدد روی دکمه کلیک کنید.",
+        popupScopeIsConnectedExplainText: "شما از قبل متصل هستید، لطفاً برای خروج و اتصال مجدد روی دکمه کلیک کنید.",
         popupScopeIsConnectedButton: "خروج",
+        popupErrorTitle: "⚠️ Outlook or Teams module synchronization failed",
+        popupErrorDescription:
+            "Outlook or Teams module initialization synchronization has failed. To be connected, please try to reconnect.",
+        popupErrorContactAdmin: "If the problem persists, please contact your administrator.",
+        popupErrorShowMore: "Show more information",
+        popupErrorMoreInfo1:
+            "There could be a problem with the Sign In process. Please check that the SSO Azure provider is correctly configured.",
+        popupErrorMoreInfo2:
+            'Please check that the scope "offline_access" is enabled for the SSO Azure provider. This scope is required to get the refresh token and keep the Teams or Outlook module connected.',
     },
     google: {
         signIn: "ورود با Google",
@@ -71,11 +82,11 @@ const externalModule: BaseTranslation = {
             guestExplain:
                 "لطفاً برای ایجاد یک Google Meet وارد پلتفرم شوید، یا از مالک بخواهید یکی برای شما ایجاد کند 🚀",
             error: "تنظیمات Google Workspace شما اجازه ایجاد Meet را نمی‌دهد.",
-            errorExplain: "نگران نباشید، هنوز هم می‌توانید وقتی شخص دیگری لینکی را به اشتراک می‌گذارد به جلسات بپیوندید 🙏",
+            errorExplain:
+                "نگران نباشید، هنوز هم می‌توانید وقتی شخص دیگری لینکی را به اشتراک می‌گذارد به جلسات بپیوندید 🙏",
         },
         popupScopeIsConnectedButton: "خروج",
-        popupScopeIsConnectedExplainText:
-            "شما از قبل متصل هستید، لطفاً برای خروج و اتصال مجدد روی دکمه کلیک کنید.",
+        popupScopeIsConnectedExplainText: "شما از قبل متصل هستید، لطفاً برای خروج و اتصال مجدد روی دکمه کلیک کنید.",
     },
     calendar: {
         title: "جلسه امروز شما",
@@ -87,4 +98,4 @@ const externalModule: BaseTranslation = {
     },
 };
 
-export default externalModule;
+export default translation;

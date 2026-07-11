@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 
 // Usage:
 //  - Single comparison: tsx scripts/diff-i18n.ts <target-locale> [source-locale]
@@ -22,7 +22,8 @@ const tgtDir = fileURLToPath(new URL(`../src/i18n/${targetLocale}`, import.meta.
 const baseI18nDir = fileURLToPath(new URL("../src/i18n", import.meta.url));
 
 async function loadModule(file: string): Promise<unknown> {
-    const mod = await import(file);
+    const importPath = file.startsWith("file:") ? file : pathToFileURL(file).href;
+    const mod = await import(importPath);
     // return default export when available, fallback to the module namespace
     return (mod as { default?: unknown }).default ?? mod;
 }
@@ -85,7 +86,7 @@ async function preloadSourceModules(dir: string) {
 async function computeMissingCountsForLocale(
     srcModules: Map<string, { keys: string[]; count: number }>,
     srcDir: string,
-    localeDir: string
+    localeDir: string,
 ) {
     let missingKeys = 0;
     let missingFiles = 0;
@@ -184,7 +185,7 @@ async function runDetailedCheck() {
                         console.log(`${file}:`);
                     }
                     console.log(
-                        `  ⚠️  ${lang}: ${langKeyCount}/${refKeyCount} keys (${percentage}% complete, ${missingCount} missing key(s))`
+                        `  ⚠️  ${lang}: ${langKeyCount}/${refKeyCount} keys (${percentage}% complete, ${missingCount} missing key(s))`,
                     );
                     // Show first 15 missing keys
                     const keysToShow = missingKeys.slice(0, 15);
@@ -334,14 +335,14 @@ async function run() {
                 continue;
             }
             console.log(
-                `${r.locale}: ${r.missingKeys} missing keys${r.missingFiles ? `, ${r.missingFiles} missing files` : ""}`
+                `${r.locale}: ${r.missingKeys} missing keys${r.missingFiles ? `, ${r.missingFiles} missing files` : ""}`,
             );
         }
         const totalMissing = results.reduce((acc, r) => acc + r.missingKeys, 0);
         if (totalMissing === 0) console.log("All locales are fully translated. ✅");
         if (!isQuietMode) {
             console.log(
-                "\nTip: to view detailed missing keys for one locale, run: npm run i18n:diff -- <language-code>"
+                "\nTip: to view detailed missing keys for one locale, run: npm run i18n:diff -- <language-code>",
             );
         }
         return;

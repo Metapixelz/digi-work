@@ -22,7 +22,7 @@ async function main() {
     const expectedMarkdown = generateMarkdown(playVars, backVars, mapStorageVars);
 
     // Read current documentation
-    const docPath = fileURLToPath(new URL("../../../../docs/others/self-hosting/env-variables.md", import.meta.url));
+    const docPath = fileURLToPath(new URL("../../../../workadventure-docs/others/self-hosting/env-variables.md", import.meta.url));
     let currentMarkdown: string;
 
     try {

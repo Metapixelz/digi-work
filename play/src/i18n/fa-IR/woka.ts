@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const woka: BaseTranslation = {
+const translation: Translation = {
     customWoka: {
         title: "WOKA خود را بسازید",
         navigation: {
@@ -20,4 +20,4 @@ const woka: BaseTranslation = {
     },
 };
 
-export default woka;
+export default translation;

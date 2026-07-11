@@ -1,7 +1,8 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const messageScreen: BaseTranslation = {
+const translation: Translation = {
     connecting: "در حال اتصال...",
     pleaseWait: "لطفاً منتظر بمانید تا شما را به اتاق متصل کنیم.",
 };
-export default messageScreen;
+
+export default translation;

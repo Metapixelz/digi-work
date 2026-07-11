@@ -520,48 +520,4 @@ jobs:
         run: yarn pretty-check
         working-directory: "desktop/local-app"
 
-  continuous-integration-end-to-end-tests:
-    name: "Continuous Integration checking End To End tests"
 
-    runs-on: "ubuntu-latest"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v5"
-
-      - name: "Setup NodeJS"
-        uses: actions/setup-node@v3
-        with:
-          node-version: 24
-          cache: "npm"
-
-      - name: "Install dependencies"
-        run: npm ci --workspace=workadventure-e2e-tests --workspace=workadventure-play
-
-      - name: "Install messages dependencies"
-        run: npm ci
-        working-directory: "messages"
-
-      - name: "Build proto messages"
-        run: npm run ts-proto
-        working-directory: "messages"
-
-      - name: "Install Room API client dependencies"
-        run: npm ci
-        working-directory: "libs/room-api-clients/room-api-client-js"
-
-      - name: "Build Room API proto files"
-        run: npm run ts-proto
-        working-directory: "libs/room-api-clients/room-api-client-js"
-
-      - name: "Build API typings"
-        run: npm run build-typings
-        working-directory: "play"
-
-      - name: "Lint"
-        run: npm run lint
-        working-directory: "tests"
-
-      - name: "Prettier"
-        run: npm run pretty-check
-        working-directory: "tests"

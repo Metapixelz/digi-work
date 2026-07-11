@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const menu: BaseTranslation = {
+const translation: Translation = {
     title: "منو",
     icon: {
         open: {
@@ -23,6 +23,7 @@ const menu: BaseTranslation = {
     profile: {
         login: "ورود",
         logout: "خروج",
+        helpAndTips: "Help & Tips",
     },
     settings: {
         videoBandwidth: {
@@ -30,12 +31,14 @@ const menu: BaseTranslation = {
             low: "پایین",
             recommended: "توصیه شده",
             unlimited: "نامحدود",
+            high: "High",
         },
         shareScreenBandwidth: {
             title: "کیفیت اشتراک‌گذاری صفحه",
             low: "پایین",
             recommended: "توصیه شده",
             unlimited: "نامحدود",
+            high: "High",
         },
         language: {
             title: "زبان",
@@ -63,6 +66,33 @@ const menu: BaseTranslation = {
             ding: "دینگ",
             wobble: "لرزش",
         },
+        bandwidthConstrainedPreference: {
+            title: "If network bandwidth is limited",
+            maintainFramerateTitle: "Keep smooth animations",
+            maintainFramerateDescription:
+                "Prioritize framerate over resolution. Use this when smooth animations are important like streaming video games.",
+            maintainResolutionTitle: "Keep text readable",
+            maintainResolutionDescription:
+                "Prioritize resolution over framerate. Use this when text readability is important like in presentations, or when sharing code.",
+            balancedTitle: "Keep framerate and resolution balanced",
+            balancedDescription: "Try to keep a balance between framerate and resolution.",
+        },
+        microphone: {
+            title: "Microphone settings",
+            autoGainControl: "Automatic gain control",
+            autoGainControlDescription: "Automatically adjust your microphone volume.",
+            echoCancellation: "Echo cancellation",
+            enableAdvancedNoiseReduction: "Enable advanced noise reduction",
+            noiseSuppressionMode: "Noise suppression mode:",
+            workAdventureNoiseSuppression: "digi-work noise suppression",
+            workAdventureNoiseSuppressionDescription: "Process your microphone with digi-work's noise suppression.",
+            recommended: "Recommended",
+            browserNoiseSuppression: "Browser noise suppression",
+            browserNoiseSuppressionDescription: "Use your browser's built-in noise suppression.",
+            voiceIsolation: "Voice isolation",
+            voiceIsolationDescription: "Use your browser and operating system voice isolation when available.",
+        },
+        displayVideoQualityStats: "Display video quality statistics",
     },
     invite: {
         description: "لینک اتاق را به اشتراک بگذارید!",
@@ -165,7 +195,8 @@ const menu: BaseTranslation = {
         emote6: "احساس 6",
         openSayPopup: "باز کردن پاپ‌آپ گفتن",
         openThinkPopup: "باز کردن پاپ‌آپ فکر کردن",
+        walkMyDesk: "Walk to My Desk",
     },
 };
 
-export default menu;
+export default translation;

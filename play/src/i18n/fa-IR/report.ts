@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const report: BaseTranslation = {
+const translation: Translation = {
     block: {
         title: "مسدود کردن",
         content: "مسدود کردن هرگونه ارتباط از و به {userName}. این عمل قابل بازگشت است.",
@@ -23,4 +23,4 @@ const report: BaseTranslation = {
     },
 };
 
-export default report;
+export default translation;

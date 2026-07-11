@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const say: BaseTranslation = {
+const translation: Translation = {
     type: {
         say: "گفتن",
         think: "فکر کردن",
@@ -15,4 +15,4 @@ const say: BaseTranslation = {
     },
 };
 
-export default say;
+export default translation;

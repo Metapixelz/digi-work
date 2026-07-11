@@ -1,6 +1,6 @@
-import type { BaseTranslation } from "../i18n-types";
+import type { Translation } from "../i18n-types";
 
-const audio: BaseTranslation = {
+const translation: Translation = {
     volumeCtrl: "تغییر ولوم صدا",
     manager: {
         reduce: "کاهش ولوم پلیر صوتی هنگام صحبت کردن",
@@ -12,4 +12,4 @@ const audio: BaseTranslation = {
     disable: "میکروفون خود را خاموش کنید",
 };
 
-export default audio;
+export default translation;
