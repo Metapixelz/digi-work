@@ -23,7 +23,7 @@ COPY libs/math-utils/package.json libs/math-utils/package.json
 COPY libs/tailwind/package.json libs/tailwind/package.json
 COPY libs/store-utils/package.json libs/store-utils/package.json
 COPY libs/shared-utils/package.json libs/shared-utils/package.json
-RUN npm ci --workspace=workadventure-play --workspace=@workadventure/iframe-api-typings...
+RUN npm ci --workspace=workadventure-play --workspace=@workadventure/iframe-api-typings --workspace=@workadventure/messages --workspace=@workadventure/map-editor --workspace=@workadventure/math-utils --workspace=@workadventure/tailwind --workspace=@workadventure/store-utils --workspace=@workadventure/shared-utils
 COPY libs ./libs
 COPY --from=proto-builder /usr/libs/messages/src ./libs/messages/src
 COPY play ./play

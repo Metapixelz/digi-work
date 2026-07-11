@@ -33,6 +33,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build & Push
         uses: docker/build-push-action@v6
         with:
@@ -44,5 +47,5 @@ jobs:
             ghcr.io/${{ env.OWNER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             ${{ env.DOCKER_OWNER }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.DOCKER_OWNER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          cache-from: ""
-          cache-to: ""
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
