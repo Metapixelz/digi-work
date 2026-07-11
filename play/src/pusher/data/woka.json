@@ -148,6 +148,354 @@
                         "name": "female12",
                         "url": "resources/characters/pipoya/su4 Student fmale 12.png",
                         "position": 23
+                    },
+                    {
+                        "id": "headmaster_fmale",
+                        "name": "headmaster_fmale",
+                        "url": "resources/characters/pipoya/Headmaster fmale.png",
+                        "position": 24
+                    },
+                    {
+                        "id": "headmaster_male",
+                        "name": "headmaster_male",
+                        "url": "resources/characters/pipoya/Headmaster male.png",
+                        "position": 25
+                    },
+                    {
+                        "id": "male_10_1",
+                        "name": "male_10_1",
+                        "url": "resources/characters/pipoya/Male 10-1.png",
+                        "position": 26
+                    },
+                    {
+                        "id": "male_10_2",
+                        "name": "male_10_2",
+                        "url": "resources/characters/pipoya/Male 10-2.png",
+                        "position": 27
+                    },
+                    {
+                        "id": "male_10_3",
+                        "name": "male_10_3",
+                        "url": "resources/characters/pipoya/Male 10-3.png",
+                        "position": 28
+                    },
+                    {
+                        "id": "male_10_4",
+                        "name": "male_10_4",
+                        "url": "resources/characters/pipoya/Male 10-4.png",
+                        "position": 29
+                    },
+                    {
+                        "id": "male_11_1",
+                        "name": "male_11_1",
+                        "url": "resources/characters/pipoya/Male 11-1.png",
+                        "position": 30
+                    },
+                    {
+                        "id": "male_11_2",
+                        "name": "male_11_2",
+                        "url": "resources/characters/pipoya/Male 11-2.png",
+                        "position": 31
+                    },
+                    {
+                        "id": "male_11_3",
+                        "name": "male_11_3",
+                        "url": "resources/characters/pipoya/Male 11-3.png",
+                        "position": 32
+                    },
+                    {
+                        "id": "male_11_4",
+                        "name": "male_11_4",
+                        "url": "resources/characters/pipoya/Male 11-4.png",
+                        "position": 33
+                    },
+                    {
+                        "id": "male_12_1",
+                        "name": "male_12_1",
+                        "url": "resources/characters/pipoya/Male 12-1.png",
+                        "position": 34
+                    },
+                    {
+                        "id": "male_12_2",
+                        "name": "male_12_2",
+                        "url": "resources/characters/pipoya/Male 12-2.png",
+                        "position": 35
+                    },
+                    {
+                        "id": "male_12_3",
+                        "name": "male_12_3",
+                        "url": "resources/characters/pipoya/Male 12-3.png",
+                        "position": 36
+                    },
+                    {
+                        "id": "male_12_4",
+                        "name": "male_12_4",
+                        "url": "resources/characters/pipoya/Male 12-4.png",
+                        "position": 37
+                    },
+                    {
+                        "id": "male_13_1",
+                        "name": "male_13_1",
+                        "url": "resources/characters/pipoya/Male 13-1.png",
+                        "position": 38
+                    },
+                    {
+                        "id": "male_13_2",
+                        "name": "male_13_2",
+                        "url": "resources/characters/pipoya/Male 13-2.png",
+                        "position": 39
+                    },
+                    {
+                        "id": "male_13_3",
+                        "name": "male_13_3",
+                        "url": "resources/characters/pipoya/Male 13-3.png",
+                        "position": 40
+                    },
+                    {
+                        "id": "male_13_4",
+                        "name": "male_13_4",
+                        "url": "resources/characters/pipoya/Male 13-4.png",
+                        "position": 41
+                    },
+                    {
+                        "id": "male_14_1",
+                        "name": "male_14_1",
+                        "url": "resources/characters/pipoya/Male 14-1.png",
+                        "position": 42
+                    },
+                    {
+                        "id": "male_14_2",
+                        "name": "male_14_2",
+                        "url": "resources/characters/pipoya/Male 14-2.png",
+                        "position": 43
+                    },
+                    {
+                        "id": "male_14_3",
+                        "name": "male_14_3",
+                        "url": "resources/characters/pipoya/Male 14-3.png",
+                        "position": 44
+                    },
+                    {
+                        "id": "male_14_4",
+                        "name": "male_14_4",
+                        "url": "resources/characters/pipoya/Male 14-4.png",
+                        "position": 45
+                    },
+                    {
+                        "id": "male_16_1",
+                        "name": "male_16_1",
+                        "url": "resources/characters/pipoya/Male 16-1.png",
+                        "position": 46
+                    },
+                    {
+                        "id": "male_16_2",
+                        "name": "male_16_2",
+                        "url": "resources/characters/pipoya/Male 16-2.png",
+                        "position": 47
+                    },
+                    {
+                        "id": "male_16_3",
+                        "name": "male_16_3",
+                        "url": "resources/characters/pipoya/Male 16-3.png",
+                        "position": 48
+                    },
+                    {
+                        "id": "male_16_4",
+                        "name": "male_16_4",
+                        "url": "resources/characters/pipoya/Male 16-4.png",
+                        "position": 49
+                    },
+                    {
+                        "id": "male_17_1",
+                        "name": "male_17_1",
+                        "url": "resources/characters/pipoya/Male 17-1.png",
+                        "position": 50
+                    },
+                    {
+                        "id": "male_17_2",
+                        "name": "male_17_2",
+                        "url": "resources/characters/pipoya/Male 17-2.png",
+                        "position": 51
+                    },
+                    {
+                        "id": "male_17_3",
+                        "name": "male_17_3",
+                        "url": "resources/characters/pipoya/Male 17-3.png",
+                        "position": 52
+                    },
+                    {
+                        "id": "male_17_4",
+                        "name": "male_17_4",
+                        "url": "resources/characters/pipoya/Male 17-4.png",
+                        "position": 53
+                    },
+                    {
+                        "id": "teacher_fmale_1",
+                        "name": "teacher_fmale_1",
+                        "url": "resources/characters/pipoya/Teacher fmale 01.png",
+                        "position": 54
+                    },
+                    {
+                        "id": "teacher_fmale_2",
+                        "name": "teacher_fmale_2",
+                        "url": "resources/characters/pipoya/Teacher fmale 02.png",
+                        "position": 55
+                    },
+                    {
+                        "id": "teacher_fmale_3",
+                        "name": "teacher_fmale_3",
+                        "url": "resources/characters/pipoya/Teacher fmale 03.png",
+                        "position": 56
+                    },
+                    {
+                        "id": "teacher_fmale_4",
+                        "name": "teacher_fmale_4",
+                        "url": "resources/characters/pipoya/Teacher fmale 04.png",
+                        "position": 57
+                    },
+                    {
+                        "id": "teacher_male_1",
+                        "name": "teacher_male_1",
+                        "url": "resources/characters/pipoya/Teacher male 01.png",
+                        "position": 58
+                    },
+                    {
+                        "id": "teacher_male_2",
+                        "name": "teacher_male_2",
+                        "url": "resources/characters/pipoya/Teacher male 02.png",
+                        "position": 59
+                    },
+                    {
+                        "id": "teacher_male_3",
+                        "name": "teacher_male_3",
+                        "url": "resources/characters/pipoya/Teacher male 03.png",
+                        "position": 60
+                    },
+                    {
+                        "id": "teacher_male_4",
+                        "name": "teacher_male_4",
+                        "url": "resources/characters/pipoya/Teacher male 04.png",
+                        "position": 61
+                    },
+                    {
+                        "id": "female_5_1",
+                        "name": "female_5_1",
+                        "url": "resources/characters/pipoya/Female 05-1.png",
+                        "position": 62
+                    },
+                    {
+                        "id": "female_5_2",
+                        "name": "female_5_2",
+                        "url": "resources/characters/pipoya/Female 05-2.png",
+                        "position": 63
+                    },
+                    {
+                        "id": "female_5_3",
+                        "name": "female_5_3",
+                        "url": "resources/characters/pipoya/Female 05-3.png",
+                        "position": 64
+                    },
+                    {
+                        "id": "female_5_4",
+                        "name": "female_5_4",
+                        "url": "resources/characters/pipoya/Female 05-4.png",
+                        "position": 65
+                    },
+                    {
+                        "id": "female_15_1",
+                        "name": "female_15_1",
+                        "url": "resources/characters/pipoya/Female 15-1.png",
+                        "position": 66
+                    },
+                    {
+                        "id": "female_15_2",
+                        "name": "female_15_2",
+                        "url": "resources/characters/pipoya/Female 15-2.png",
+                        "position": 67
+                    },
+                    {
+                        "id": "female_15_3",
+                        "name": "female_15_3",
+                        "url": "resources/characters/pipoya/Female 15-3.png",
+                        "position": 68
+                    },
+                    {
+                        "id": "female_15_4",
+                        "name": "female_15_4",
+                        "url": "resources/characters/pipoya/Female 15-4.png",
+                        "position": 69
+                    },
+                    {
+                        "id": "female_16_1",
+                        "name": "female_16_1",
+                        "url": "resources/characters/pipoya/Female 16-1.png",
+                        "position": 70
+                    },
+                    {
+                        "id": "female_16_2",
+                        "name": "female_16_2",
+                        "url": "resources/characters/pipoya/Female 16-2.png",
+                        "position": 71
+                    },
+                    {
+                        "id": "female_16_3",
+                        "name": "female_16_3",
+                        "url": "resources/characters/pipoya/Female 16-3.png",
+                        "position": 72
+                    },
+                    {
+                        "id": "female_16_4",
+                        "name": "female_16_4",
+                        "url": "resources/characters/pipoya/Female 16-4.png",
+                        "position": 73
+                    },
+                    {
+                        "id": "female_18_1",
+                        "name": "female_18_1",
+                        "url": "resources/characters/pipoya/Female 18-1.png",
+                        "position": 74
+                    },
+                    {
+                        "id": "female_18_2",
+                        "name": "female_18_2",
+                        "url": "resources/characters/pipoya/Female 18-2.png",
+                        "position": 75
+                    },
+                    {
+                        "id": "female_18_3",
+                        "name": "female_18_3",
+                        "url": "resources/characters/pipoya/Female 18-3.png",
+                        "position": 76
+                    },
+                    {
+                        "id": "female_18_4",
+                        "name": "female_18_4",
+                        "url": "resources/characters/pipoya/Female 18-4.png",
+                        "position": 77
+                    },
+                    {
+                        "id": "female_20_1",
+                        "name": "female_20_1",
+                        "url": "resources/characters/pipoya/Female 20-1.png",
+                        "position": 78
+                    },
+                    {
+                        "id": "female_20_2",
+                        "name": "female_20_2",
+                        "url": "resources/characters/pipoya/Female 20-2.png",
+                        "position": 79
+                    },
+                    {
+                        "id": "female_20_3",
+                        "name": "female_20_3",
+                        "url": "resources/characters/pipoya/Female 20-3.png",
+                        "position": 80
+                    },
+                    {
+                        "id": "female_20_4",
+                        "name": "female_20_4",
+                        "url": "resources/characters/pipoya/Female 20-4.png",
+                        "position": 81
                     }
                 ]
             }

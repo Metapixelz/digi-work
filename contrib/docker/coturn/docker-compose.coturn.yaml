@@ -1,0 +1,19 @@
+version: "3.6"
+services:
+  coturn:
+    image: coturn/coturn
+    network_mode: "host"
+    restart: ${RESTART_POLICY}
+    command:
+      - "-n"
+      - "--log-file=stdout"
+      - "--listening-ip=${SERVERIP}"
+      - "--min-port=49152"
+      - "--max-port=65535"
+      - "--realm=${COTURN_DOMAIN}"
+      - "--use-auth-secret"
+      - "--static-auth-secret=${TURN_STATIC_AUTH_SECRET}"
+      - "--external-ip=${SERVERIP}"
+      - "--no-multicast-peers"
+    labels:
+      - "traefik.enable=false"
