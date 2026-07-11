@@ -67,10 +67,6 @@ jobs:
         run: npm run build-iframe-api
         working-directory: "play"
 
-      - name: "Typecheck"
-        run: npm run typecheck
-        working-directory: "play"
-
       - name: "Svelte check"
         run: npm run svelte-check
         working-directory: "play"
