@@ -26,7 +26,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${DATA_DIR}/letsencrypt/:/letsencrypt/
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   play:
     image: alreadydonewithu/digi-work-play:${VERSION}
@@ -37,7 +37,7 @@ services:
       - ENABLE_MAP_EDITOR
       - MAP_EDITOR_ALLOWED_USERS
       - MAP_EDITOR_ALLOW_ALL_USERS
-      - PUSHER_URL=https://${DOMAIN}/
+      - PUSHER_URL=https://${PLAY_DOMAIN}/
       - ICON_URL=/icon
       - TURN_SERVER
       - TURN_USER
@@ -53,7 +53,7 @@ services:
       - API_URL=back:50051
       - FRONT_URL=/
       - INTERNAL_MAP_STORAGE_URL=http://map-storage:3000
-      - PUBLIC_MAP_STORAGE_URL=https://${DOMAIN}/map-storage
+      - PUBLIC_MAP_STORAGE_URL=https://${PLAY_DOMAIN}/map-storage
       - START_ROOM_URL
       - OPENID_PROMPT=login
       - OPENID_WOKA_NAME_POLICY
@@ -131,18 +131,18 @@ services:
     labels:
       traefik.enable: "true"
 
-      traefik.http.routers.play.rule: "Host(`${DOMAIN}`) && PathPrefix(`/`)"
+      traefik.http.routers.play.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/`)"
       traefik.http.routers.play.entryPoints: "web"
       traefik.http.routers.play.service: play
       traefik.http.services.play.loadbalancer.server.port: "3000"
 
-      traefik.http.routers.play-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/`)"
+      traefik.http.routers.play-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/`)"
       traefik.http.routers.play-ssl.entryPoints: "websecure"
       traefik.http.routers.play-ssl.tls: "true"
       traefik.http.routers.play-ssl.tls.certresolver: "myresolver"
       traefik.http.routers.play-ssl.service: "play"
 
-      traefik.http.routers.play-ws.rule: "Host(`${DOMAIN}`) && PathPrefix(`/ws/`)"
+      traefik.http.routers.play-ws.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/ws/`)"
       traefik.http.routers.play-ws.entryPoints: "web"
       traefik.http.routers.play-ws.service: play-ws
       traefik.http.services.play-ws.loadbalancer.server.port: "3001"
@@ -151,25 +151,25 @@ services:
       traefik.http.services.play-ws.loadbalancer.sticky.cookie.httpOnly: "true"
       traefik.http.services.play-ws.loadbalancer.sticky.cookie.sameSite: "lax"
 
-      traefik.http.routers.play-ws-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/ws/`)"
+      traefik.http.routers.play-ws-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/ws/`)"
       traefik.http.routers.play-ws-ssl.entryPoints: "websecure"
       traefik.http.routers.play-ws-ssl.tls: "true"
       traefik.http.routers.play-ws-ssl.tls.certresolver: "myresolver"
       traefik.http.routers.play-ws-ssl.service: "play-ws"
 
-      traefik.http.routers.room-api.rule: "Host(`${DOMAIN}`)"
+      traefik.http.routers.room-api.rule: "Host(`${PLAY_DOMAIN}`)"
       traefik.http.routers.room-api.entryPoints: "grpc"
       traefik.http.routers.room-api.service: "room-api"
       traefik.http.services.room-api.loadbalancer.server.port: "50051"
       traefik.http.services.room-api.loadbalancer.server.scheme: "h2c"
       traefik.http.routers.room-api.tls: "true"
       traefik.http.routers.room-api.tls.certresolver: "myresolver"
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   back:
     image: alreadydonewithu/digi-work-back:${VERSION}
     environment:
-      - PLAY_URL=https://${DOMAIN}
+      - PLAY_URL=https://${PLAY_DOMAIN}
       - MINIMUM_DISTANCE=${MINIMUM_DISTANCE}
       - GROUP_RADIUS=${GROUP_RADIUS}
       - SECRET_JITSI_KEY
@@ -191,7 +191,7 @@ services:
       - PROMETHEUS_AUTHORIZATION_TOKEN
       - MAP_STORAGE_URL=map-storage:50053
       - INTERNAL_MAP_STORAGE_URL=http://map-storage:3000
-      - PUBLIC_MAP_STORAGE_URL=https://${DOMAIN}/map-storage
+      - PUBLIC_MAP_STORAGE_URL=https://${PLAY_DOMAIN}/map-storage
       - PLAYER_VARIABLES_MAX_TTL
       - ENABLE_CHAT
       - ENABLE_CHAT_UPLOAD
@@ -211,22 +211,22 @@ services:
     labels:
       traefik.enable: "true"
       traefik.http.middlewares.strip-api-prefix.stripprefix.prefixes: "/api"
-      traefik.http.routers.back.rule: "Host(`${DOMAIN}`) && PathPrefix(`/api`)"
+      traefik.http.routers.back.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/api`)"
       traefik.http.routers.back.middlewares: "strip-api-prefix@docker"
       traefik.http.routers.back.entryPoints: "web"
       traefik.http.services.back.loadbalancer.server.port: "8080"
       traefik.http.routers.back-ssl.middlewares: "strip-api-prefix@docker"
-      traefik.http.routers.back-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/api`)"
+      traefik.http.routers.back-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/api`)"
       traefik.http.routers.back-ssl.entryPoints: "websecure"
       traefik.http.routers.back-ssl.service: "back"
       traefik.http.routers.back-ssl.tls: "true"
       traefik.http.routers.back-ssl.tls.certresolver: "myresolver"
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   uploader:
     image: alreadydonewithu/digi-work-uploader:${VERSION}
     environment:
-      - UPLOADER_URL=https://${DOMAIN}/uploader
+      - UPLOADER_URL=https://${PLAY_DOMAIN}/uploader
       #AWS
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
@@ -244,17 +244,17 @@ services:
     labels:
       traefik.enable: "true"
       traefik.http.middlewares.strip-uploader-prefix.stripprefix.prefixes: "/uploader"
-      traefik.http.routers.uploader.rule: "Host(`${DOMAIN}`) && PathPrefix(`/uploader`)"
+      traefik.http.routers.uploader.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/uploader`)"
       traefik.http.routers.uploader.middlewares: "strip-uploader-prefix@docker"
       traefik.http.routers.uploader.entryPoints: "web"
       traefik.http.services.uploader.loadbalancer.server.port: "8080"
       traefik.http.routers.uploader-ssl.middlewares: "strip-uploader-prefix@docker"
-      traefik.http.routers.uploader-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/uploader`)"
+      traefik.http.routers.uploader-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/uploader`)"
       traefik.http.routers.uploader-ssl.entryPoints: "websecure"
       traefik.http.routers.uploader-ssl.service: "uploader"
       traefik.http.routers.uploader-ssl.tls: "true"
       traefik.http.routers.uploader-ssl.tls.certresolver: "myresolver"
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   icon:
     image: matthiasluedtke/iconserver:v3.21.0
@@ -262,31 +262,31 @@ services:
       traefik.enable: "true"
       traefik.http.middlewares.strip-icon-prefix.stripprefix.prefixes: "/icon"
       traefik.http.routers.icon.middlewares: "strip-icon-prefix@docker"
-      traefik.http.routers.icon.rule: "Host(`${DOMAIN}`) && PathPrefix(`/icon`)"
+      traefik.http.routers.icon.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/icon`)"
       traefik.http.routers.icon.entryPoints: "web"
       traefik.http.services.icon.loadbalancer.server.port: "8080"
       traefik.http.routers.icon-ssl.middlewares: "strip-icon-prefix@docker"
-      traefik.http.routers.icon-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/icon`)"
+      traefik.http.routers.icon-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/icon`)"
       traefik.http.routers.icon-ssl.entryPoints: "websecure"
       traefik.http.routers.icon-ssl.service: "icon"
       traefik.http.routers.icon-ssl.tls: "true"
       traefik.http.routers.icon-ssl.tls.certresolver: "myresolver"
       # Route for /lettericons (redirect target from iconserver)
-      traefik.http.routers.lettericons.rule: "Host(`${DOMAIN}`) && PathPrefix(`/lettericons`)"
+      traefik.http.routers.lettericons.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/lettericons`)"
       traefik.http.routers.lettericons.entryPoints: "web"
       traefik.http.routers.lettericons.service: "icon"
-      traefik.http.routers.lettericons-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/lettericons`)"
+      traefik.http.routers.lettericons-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/lettericons`)"
       traefik.http.routers.lettericons-ssl.entryPoints: "websecure"
       traefik.http.routers.lettericons-ssl.service: "icon"
       traefik.http.routers.lettericons-ssl.tls: "true"
       traefik.http.routers.lettericons-ssl.tls.certresolver: "myresolver"
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   redis:
     image: redis:6
     volumes:
       - redisdata:/data
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
   map-storage:
     image: alreadydonewithu/digi-work-map-storage:${VERSION}
@@ -307,25 +307,25 @@ services:
       SENTRY_TRACES_SAMPLE_RATE: $SENTRY_TRACES_SAMPLE_RATE
       SECRET_KEY: $SECRET_KEY
       PATH_PREFIX: "/map-storage"
-      ENTITY_COLLECTION_URLS: "https://${DOMAIN}/collections/FurnitureCollection.json,https://${DOMAIN}/collections/OfficeCollection.json"
+      ENTITY_COLLECTION_URLS: "https://${PLAY_DOMAIN}/collections/FurnitureCollection.json,https://${PLAY_DOMAIN}/collections/OfficeCollection.json"
       MAP_STORAGE_API_TOKEN: "${MAP_STORAGE_API_TOKEN:-${SECRET_KEY}}"
-      PUSHER_URL: "https://${DOMAIN}/"
+      PUSHER_URL: "https://${PLAY_DOMAIN}/"
     volumes:
       - map-storage-data:/maps
     labels:
       traefik.enable: "true"
       traefik.http.middlewares.strip-map-storage-prefix.stripprefix.prefixes: "/map-storage"
       traefik.http.routers.map-storage.middlewares: "strip-map-storage-prefix@docker"
-      traefik.http.routers.map-storage.rule: "Host(`${DOMAIN}`) && PathPrefix(`/map-storage`)"
+      traefik.http.routers.map-storage.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/map-storage`)"
       traefik.http.routers.map-storage.entryPoints: "web"
       traefik.http.services.map-storage.loadbalancer.server.port: "3000"
       traefik.http.routers.map-storage-ssl.middlewares: "strip-map-storage-prefix@docker"
-      traefik.http.routers.map-storage-ssl.rule: "Host(`${DOMAIN}`) && PathPrefix(`/map-storage`)"
+      traefik.http.routers.map-storage-ssl.rule: "Host(`${PLAY_DOMAIN}`) && PathPrefix(`/map-storage`)"
       traefik.http.routers.map-storage-ssl.entryPoints: "websecure"
       traefik.http.routers.map-storage-ssl.service: "map-storage"
       traefik.http.routers.map-storage-ssl.tls: "true"
       traefik.http.routers.map-storage-ssl.tls.certresolver: "myresolver"
-    restart: ${RESTART_POLICY}
+    restart: unless-stopped
 
 volumes:
   redisdata:
