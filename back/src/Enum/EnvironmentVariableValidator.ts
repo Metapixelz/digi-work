@@ -111,6 +111,23 @@ Note that anonymous players don't have any TTL limit because their data is store
     ENABLE_CHAT_UPLOAD: BoolAsString.optional()
         .transform((val) => toBool(val, true))
         .describe("Enable/disable file upload in chat. Defaults to true"),
+    ENABLE_TELEMETRY: BoolAsString.optional()
+        .transform((val) => toBool(val, true))
+        .describe(
+            "By default, WorkAdventure will send telemetry usage once a day. This data contains the version of WorkAdventure used and very rough usage (max number of users...). The statistics collected through telemetry can provide developers valuable insights into WorkAdventure versions that are actually used. No personal user data is sent. Please keep this setting to true unless your WorkAdventure installation is 'secret'.",
+        ),
+    SECURITY_EMAIL: z
+        .string()
+        .email()
+        .optional()
+        .describe(
+            'This email address will be notified if your WorkAdventure version contains a known security flaw. ENABLE_TELEMETRY must be set to "true" for this.',
+        ),
+    TELEMETRY_URL: z
+        .string()
+        .optional()
+        .default("https://stats.workadventu.re")
+        .describe("URL where telemetry data is sent."),
     SENTRY_DSN: z.string().optional().describe("If set, WorkAdventure will send errors to Sentry"),
     SENTRY_RELEASE: z
         .string()

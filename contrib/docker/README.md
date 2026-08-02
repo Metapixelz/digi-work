@@ -180,6 +180,9 @@ You can now customize your WorkAdventure instance by modifying the `.env` file.
 Please be sure to configure Jitsi, as it is the default video conferencing solution for large room,
 and Turn settings to ensure video is correctly relayed, even if your clients are in a restricted network.
 
+Keeping your server secure is also important. You can configure the `SECURITY_EMAIL` environment variable
+to receive security notifications from the WorkAdventure core team.
+You will be notified if your WorkAdventure version contains a known security flaw.
 
 #### Adding authentication
 
