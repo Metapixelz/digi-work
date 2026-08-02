@@ -203,6 +203,7 @@ import { ApplicationManager } from "../../Chat/Applications/ApplicationManager";
 import { audioPlaybackStore } from "../../Stores/AudioPlaybackStore";
 import { requestedScreenSharingState } from "../../Stores/ScreenSharingStore";
 import { EnterLeaveScriptingService } from "../Helpers/EnterLeaveScriptingService";
+import { getCustomEntityCollectionUrl } from "./customEntityCollectionUrl";
 import { GameMapFrontWrapper } from "./GameMap/GameMapFrontWrapper";
 import { gameManager } from "./GameManager";
 import { EmoteManager } from "./EmoteManager";
@@ -630,8 +631,12 @@ export class GameScene extends DirtyScene {
     }
 
     public getCustomEntityCollectionUrl() {
-        const mapStoragePath = `${PUBLIC_MAP_STORAGE_PREFIX}${ENTITIES_FOLDER_PATH_NO_PREFIX}/${ENTITY_COLLECTION_FILE}`;
-        return new URL(mapStoragePath, this.wamUrlFile).toString();
+        return getCustomEntityCollectionUrl(
+            PUBLIC_MAP_STORAGE_PREFIX,
+            ENTITIES_FOLDER_PATH_NO_PREFIX,
+            ENTITY_COLLECTION_FILE,
+            this.wamUrlFile,
+        );
     }
 
     //hook initialisation

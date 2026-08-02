@@ -2,6 +2,9 @@ version: "3.6"
 services:
   reverse-proxy:
     image: traefik:v3.6.1
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     command:
       - --log.level=${LOG_LEVEL}
       - --providers.docker
@@ -29,7 +32,7 @@ services:
     restart: unless-stopped
 
   play:
-    image: alreadydonewithu/digi-work-play:${VERSION}
+    image: alreadydonewithu/digi-work-play:${VERSION:?Set VERSION to an immutable sha-<commit> or SemVer tag}
     environment:
       - DEBUG_MODE
       - JITSI_URL
@@ -54,7 +57,7 @@ services:
       - FRONT_URL=/
       - INTERNAL_MAP_STORAGE_URL=http://map-storage:3000
       - PUBLIC_MAP_STORAGE_URL=https://${PLAY_DOMAIN}/map-storage
-      - START_ROOM_URL
+      - START_ROOM_URL=${START_ROOM_URL:-/~/ourmaps/digiwork.wam}
       - OPENID_PROMPT=login
       - OPENID_WOKA_NAME_POLICY
       - OPENID_CLIENT_ID
@@ -167,7 +170,7 @@ services:
     restart: unless-stopped
 
   back:
-    image: alreadydonewithu/digi-work-back:${VERSION}
+    image: alreadydonewithu/digi-work-back:${VERSION:?Set VERSION to an immutable sha-<commit> or SemVer tag}
     environment:
       - PLAY_URL=https://${PLAY_DOMAIN}
       - MINIMUM_DISTANCE=${MINIMUM_DISTANCE}
@@ -224,7 +227,7 @@ services:
     restart: unless-stopped
 
   uploader:
-    image: alreadydonewithu/digi-work-uploader:${VERSION}
+    image: alreadydonewithu/digi-work-uploader:${VERSION:?Set VERSION to an immutable sha-<commit> or SemVer tag}
     environment:
       - UPLOADER_URL=https://${PLAY_DOMAIN}/uploader
       #AWS
@@ -289,7 +292,7 @@ services:
     restart: unless-stopped
 
   map-storage:
-    image: alreadydonewithu/digi-work-map-storage:${VERSION}
+    image: alreadydonewithu/digi-work-map-storage:${VERSION:?Set VERSION to an immutable sha-<commit> or SemVer tag}
     environment:
       API_URL: back:50051
       PROMETHEUS_AUTHORIZATION_TOKEN: "$PROMETHEUS_AUTHORIZATION_TOKEN"
@@ -306,7 +309,8 @@ services:
       SENTRY_ENVIRONMENT: $SENTRY_ENVIRONMENT
       SENTRY_TRACES_SAMPLE_RATE: $SENTRY_TRACES_SAMPLE_RATE
       SECRET_KEY: $SECRET_KEY
-      PATH_PREFIX: "/map-storage"
+      # Traefik strips /map-storage before forwarding requests to this service.
+      PATH_PREFIX: ""
       ENTITY_COLLECTION_URLS: "https://${PLAY_DOMAIN}/collections/FurnitureCollection.json,https://${PLAY_DOMAIN}/collections/OfficeCollection.json"
       MAP_STORAGE_API_TOKEN: "${MAP_STORAGE_API_TOKEN:-${SECRET_KEY}}"
       PUSHER_URL: "https://${PLAY_DOMAIN}/"

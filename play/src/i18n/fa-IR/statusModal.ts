@@ -7,9 +7,9 @@ const translation: Translation = {
     goBackToOnlineStatusLabel: "آیا می‌خواهید به حالت آنلاین برگردید؟",
     allowNotification: "اجازه دادن به اعلان‌ها؟",
     allowNotificationExplanation: "هنگامی که کسی می‌خواهد با شما صحبت کند، یک اعلان دسکتاپ دریافت کنید.",
-    audioPlaybackBlocked: "Your browser blocked audio playback.",
-    audioPlaybackInterrupted: "Audio playback was interrupted by your browser or operating system.",
-    turnSoundOn: "Turn sound on",
+    audioPlaybackBlocked: "مرورگر شما پخش صدا را مسدود کرده است.",
+    audioPlaybackInterrupted: "پخش صدا توسط مرورگر یا سیستم عامل شما قطع شد.",
+    turnSoundOn: "صدا را روشن کنید",
 };
 
 export default translation;

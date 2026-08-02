@@ -3,7 +3,7 @@
     import type { LoginScene } from "../../Phaser/Login/LoginScene";
     import { LoginSceneName } from "../../Phaser/Login/LoginScene";
     import { MAX_USERNAME_LENGTH } from "../../Enum/EnvironmentVariable";
-    import logoImg from "../images/logo.svg";
+    import logoImg from "../images/logo-digiwork.png";
     import poweredByWorkAdventureImg from "../images/Powered_By_WorkAdventure_Big.png";
     import bgMap from "../images/map-exemple.png";
     import { gameManager } from "../../Phaser/Game/GameManager";

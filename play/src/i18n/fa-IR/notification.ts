@@ -26,10 +26,10 @@ const translation: Translation = {
     },
     addNewTag: "افزودن یک تگ جدید: '{tag}'",
     screenSharingError: "نمی‌توان اشتراک‌گذاری صفحه را شروع کرد",
-    notificationSentToMuteMicrophone: "A notification was sent to {name} to mute their microphone",
-    notificationSentToMuteCamera: "A notification was sent to {name} to mute their camera",
-    recordingStarted: "One person in the discussion has started a recording.",
-    urlCopiedToClipboard: "Url copied to clipboard",
+    notificationSentToMuteMicrophone: "اعلانی به {name} ارسال شد تا میکروفون خود را بی صدا کند",
+    notificationSentToMuteCamera: "اعلانی به {name} ارسال شد تا دوربین خود را بی صدا کند",
+    recordingStarted: "یک نفر در بحث شروع به ضبط کرده است.",
+    urlCopiedToClipboard: "آدرس اینترنتی در کلیپ بورد کپی شد",
 };
 
 export default translation;

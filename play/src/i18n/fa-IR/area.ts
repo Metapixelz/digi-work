@@ -7,16 +7,16 @@ const translation: Translation = {
         buttons: {
             yes: "بله",
             no: "خیر",
-            confirm: "Confirm",
+            confirm: "تایید کنید",
         },
         personalSpaceWithNames: "فضای شخصی {name}",
         alreadyHavePersonalArea: "شما از قبل یک منطقه شخصی دارید. اگر این یکی را ادعا کنید، قبلی حذف خواهد شد.",
     },
     blocked: {
-        locked: "This area is locked. You cannot enter.",
-        maxUsers: "This area is full. You cannot enter.",
-        noAccess: "Sorry, you don't have access to this area.",
-        unlockWithTrigger: "{trigger} to unlock this area.",
+        locked: "این منطقه قفل است. نمی توانید وارد شوید.",
+        maxUsers: "این منطقه پر است. نمی توانید وارد شوید.",
+        noAccess: "متأسفیم، شما به این منطقه دسترسی ندارید.",
+        unlockWithTrigger: "{trigger} برای باز کردن قفل این ناحیه.",
     },
 };
 

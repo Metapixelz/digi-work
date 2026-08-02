@@ -22,7 +22,7 @@ const translation: Translation = {
         yes: "بله",
         no: "خیر",
     },
-    actionName: "Locate",
+    actionName: "مکان یابی کنید",
 };
 
 export default translation;

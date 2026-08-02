@@ -38,9 +38,9 @@ const translation: Translation = {
         logout: "خروج",
         guilds: "سرورهای Discord",
         guildExplain: "کانال‌هایی را که می‌خواهید به رابط چت digi-work اضافه کنید، انتخاب کنید.\n",
-        back: "Back",
-        tokenPlaceholder: "Your Discord Token",
-        loginWithQrCode: "Login with QR Code",
+        back: "برگشت",
+        tokenPlaceholder: "رمز Discord شما",
+        loginWithQrCode: "با کد QR وارد شوید",
     },
     outlook: {
         signIn: "ورود با Outlook",
@@ -53,15 +53,15 @@ const translation: Translation = {
         isSyncronized: "همگام‌سازی شده با Outlook",
         popupScopeIsConnectedExplainText: "شما از قبل متصل هستید، لطفاً برای خروج و اتصال مجدد روی دکمه کلیک کنید.",
         popupScopeIsConnectedButton: "خروج",
-        popupErrorTitle: "⚠️ Outlook or Teams module synchronization failed",
+        popupErrorTitle: "⚠️ همگام سازی ماژول Outlook یا Teams انجام نشد",
         popupErrorDescription:
-            "Outlook or Teams module initialization synchronization has failed. To be connected, please try to reconnect.",
-        popupErrorContactAdmin: "If the problem persists, please contact your administrator.",
-        popupErrorShowMore: "Show more information",
+            "همگام سازی اولیه ماژول Outlook یا Teams انجام نشد. برای اتصال، لطفاً سعی کنید دوباره وصل شوید.",
+        popupErrorContactAdmin: "اگر مشکل همچنان ادامه داشت، لطفاً با سرپرست خود تماس بگیرید.",
+        popupErrorShowMore: "نمایش اطلاعات بیشتر",
         popupErrorMoreInfo1:
-            "There could be a problem with the Sign In process. Please check that the SSO Azure provider is correctly configured.",
+            "ممکن است مشکلی در فرآیند ورود به سیستم وجود داشته باشد. لطفاً بررسی کنید که ارائه دهنده SSO Azure به درستی پیکربندی شده است.",
         popupErrorMoreInfo2:
-            'Please check that the scope "offline_access" is enabled for the SSO Azure provider. This scope is required to get the refresh token and keep the Teams or Outlook module connected.',
+            'لطفاً بررسی کنید که محدوده "offline_access" برای ارائه دهنده SSO Azure فعال باشد. این محدوده برای دریافت نشانه رفرش و متصل نگه داشتن ماژول Teams یا Outlook مورد نیاز است.',
     },
     google: {
         signIn: "ورود با Google",

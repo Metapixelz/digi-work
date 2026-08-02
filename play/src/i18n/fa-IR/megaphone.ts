@@ -32,9 +32,9 @@ const translation: Translation = {
             button: "ارسال یک پیام صوتی",
             noAccess: "شما به این ویژگی دسترسی ندارید 😱 لطفاً با مدیر تماس بگیرید 🙏",
         },
-        backToSelectCommunication: "Back to select communication",
-        selectCommunication: "Select communication",
-        title: "Global communication",
+        backToSelectCommunication: "بازگشت به انتخاب ارتباط",
+        selectCommunication: "ارتباط را انتخاب کنید",
+        title: "ارتباطات جهانی",
     },
 };
 

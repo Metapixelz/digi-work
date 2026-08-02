@@ -1,4 +1,9 @@
 .env
+# Production-only secrets and runtime data
+contrib/docker/digi-work/.env.prod
+contrib/docker/coturn/.env.coturn
+contrib/docker/digi-work/wa/
+contrib/docker/digi-work/docker-compose.prod.yaml.broken
 .idea
 .vagrant
 Vagrantfile

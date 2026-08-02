@@ -2,55 +2,54 @@ import type { Translation } from "../i18n-types";
 
 const translation: Translation = {
     welcome: {
-        title: "Welcome to {worldName}! 🚀",
+        title: "به {worldName} خوش آمدید! 🚀",
         description:
-            "Get ready to explore a virtual world where you can move around, chat with others, and collaborate in real-time. Let's take a quick tour to help you get started!",
-        start: "Let's go!",
-        skip: "Skip tutorial",
+            "برای کاوش در دنیای مجازی که در آن می توانید در آن جا حرکت کنید، با دیگران چت کنید و در زمان واقعی همکاری کنید، آماده شوید. بیایید یک تور سریع داشته باشیم تا به شما در شروع کار کمک کنیم!",
+        start: "برویم",
+        skip: "رد شدن از آموزش",
     },
     movement: {
-        title: "Move around",
+        title: "به اطراف حرکت کنید",
         descriptionDesktop:
-            "Use your keyboard arrow keys or WASD to move your character around the map. You can also right-click to move. Try moving now!",
-        descriptionMobile: "Use the joystick or tap on the map to move your character. Try moving now!",
-        next: "Next",
+            "از کلیدهای جهت‌نمای صفحه‌کلید یا WASD برای حرکت شخصیت خود در نقشه استفاده کنید. همچنین می توانید برای جابجایی کلیک راست کنید. اکنون حرکت کنید!",
+        descriptionMobile: "برای جابجایی شخصیت خود از جوی استیک استفاده کنید یا روی نقشه ضربه بزنید. اکنون حرکت کنید!",
+        next: "بعدی",
     },
     communication: {
-        title: "Communication bubbles",
+        title: "حباب های ارتباطی",
         description:
-            "When you get close to other players, you'll automatically enter a communication bubble. You can chat with others in the same bubble!",
+            "وقتی به بازیکنان دیگر نزدیک می شوید، به طور خودکار وارد یک حباب ارتباطی می شوید. شما می توانید با دیگران در همان حباب چت کنید!",
         video: "./static/Videos/Meet.mp4",
-        next: "Got it!",
+        next: "متوجه شدم!",
     },
     lockBubble: {
-        title: "Lock your conversation",
+        title: "مکالمه خود را قفل کنید",
         description:
-            "Click the lock button to prevent others from joining your conversation bubble. This is useful for private discussions!",
+            "برای جلوگیری از پیوستن دیگران به حباب مکالمه شما، روی دکمه قفل کلیک کنید. این برای بحث های خصوصی مفید است!",
         video: "./static/Videos/LockBubble.mp4",
-        hint: "Click the highlighted lock button to try it out!",
-        next: "Next",
+        hint: "روی دکمه قفل برجسته کلیک کنید تا آن را امتحان کنید!",
+        next: "بعدی",
     },
     screenSharing: {
-        title: "Share your screen",
-        description:
-            "Share your screen with others in your conversation bubble. Perfect for presentations and collaboration!",
+        title: "صفحه نمایش خود را به اشتراک بگذارید",
+        description: "صفحه نمایش خود را در حباب مکالمه خود با دیگران به اشتراک بگذارید. ایده آل برای ارائه و همکاری!",
         video: "./static/images/screensharing.mp4",
-        hint: "Click the highlighted screen share button to start sharing!",
-        next: "Next",
+        hint: "برای شروع اشتراک‌گذاری، روی دکمه اشتراک‌گذاری صفحه برجسته کلیک کنید!",
+        next: "بعدی",
     },
     pictureInPicture: {
-        title: "Picture in Picture",
+        title: "تصویر در تصویر",
         description:
-            "Use Picture in Picture mode to keep video calls visible while you navigate the map. Great for multitasking!",
+            "از تصویر در حالت تصویر استفاده کنید تا تماس‌های ویدیویی در حین پیمایش در نقشه قابل مشاهده باشد. عالی برای چند وظیفه ای!",
         video: "./static/Videos/PictureInPicture.mp4",
-        hint: "Click the highlighted PiP button to activate it!",
-        next: "Next",
+        hint: "روی دکمه برجسته PiP کلیک کنید تا فعال شود!",
+        next: "بعدی",
     },
     complete: {
-        title: "You're all set! 🎉",
+        title: "شما آماده اید! 🎉",
         description:
-            "You've learned the basics of {worldName}! Feel free to explore, meet new people, and have fun. You can always access help from the menu if you need it.",
-        finish: "Start exploring!",
+            "شما اصول اولیه {worldName} را یاد گرفته اید! با خیال راحت کاوش کنید، با افراد جدید ملاقات کنید و از آن لذت ببرید. در صورت نیاز همیشه می توانید از منو به کمک دسترسی داشته باشید.",
+        finish: "شروع به کاوش کنید!",
     },
 };
 
