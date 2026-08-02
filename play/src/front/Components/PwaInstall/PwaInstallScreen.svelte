@@ -3,7 +3,6 @@
     import { LL } from "../../../i18n/i18n-svelte";
     import logoImg from "../images/logo-digiwork.png";
     import bgMap from "../images/map-exemple.png";
-    import poweredByWorkAdventureImg from "../images/Powered_By_WorkAdventure_Big.png";
     import pwaDefaultBackground from "../images/pwa-background-image.jpg";
     import { gameManager } from "../../Phaser/Game/GameManager";
     import { analyticsClient } from "../../Administration/AnalyticsClient";
@@ -239,8 +238,9 @@
         </div>
 
         {#if logo !== logoImg && gameManager.currentStartedRoom.showPoweredBy !== false}
-            <section class="flex justify-center pb-2">
-                <img draggable="false" src={poweredByWorkAdventureImg} alt="Powered by WorkAdventure" class="h-14" />
+            <section class="flex items-center justify-center gap-3 pb-2 text-sm text-white/80">
+                <span>Powered by</span>
+                <img draggable="false" src={logoImg} alt="DigiWork" class="h-10 w-auto" />
             </section>
         {/if}
     </div>

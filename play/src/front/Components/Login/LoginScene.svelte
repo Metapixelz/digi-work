@@ -4,7 +4,6 @@
     import { LoginSceneName } from "../../Phaser/Login/LoginScene";
     import { MAX_USERNAME_LENGTH } from "../../Enum/EnvironmentVariable";
     import logoImg from "../images/logo-digiwork.png";
-    import poweredByWorkAdventureImg from "../images/Powered_By_WorkAdventure_Big.png";
     import bgMap from "../images/map-exemple.png";
     import { gameManager } from "../../Phaser/Game/GameManager";
     import { LL, locale } from "../../../i18n/i18n-svelte";
@@ -164,8 +163,9 @@
         {/if}
     </div>
     {#if logo !== logoImg && gameManager.currentStartedRoom.showPoweredBy !== false}
-        <section class="text-right flex powered-by justify-center items-end">
-            <img draggable="false" src={poweredByWorkAdventureImg} alt="Powered by WorkAdventure" class="h-14" />
+        <section class="powered-by flex items-center justify-center gap-3 text-sm text-white/80">
+            <span>Powered by</span>
+            <img draggable="false" src={logoImg} alt="DigiWork" class="h-10 w-auto" />
         </section>
     {/if}
 </form>

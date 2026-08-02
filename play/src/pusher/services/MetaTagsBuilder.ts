@@ -13,11 +13,10 @@ import { ADMIN_API_URL } from "../enums/EnvironmentVariable";
 import { adminService } from "./AdminService";
 
 export const MetaTagsDefaultValue: RequiredMetaTagsData = {
-    title: "دیجی‌ورک",
-    description:
-        "حس خوب دورکاری!",
-    author: "Digi-work team",
-    provider: "WorkAdventure",
+    title: "DigiWork",
+    description: "حس خوب دورکاری!",
+    author: "DigiWork team",
+    provider: "DigiWork",
     favIcons: [
         {
             rel: "icon",
@@ -32,10 +31,10 @@ export const MetaTagsDefaultValue: RequiredMetaTagsData = {
             type: "image/png",
         },
     ],
-    appName: "Digi-Work",
+    appName: "DigiWork",
     shortAppName: "DW",
     themeColor: "#154a24ff",
-    cardImage: "https://workadventu.re/images/general/logo-og.png",
+    cardImage: "https://play.digi-work.ir/static/images/favicons/icon-512x512.png",
 };
 
 export class MetaTagsBuilder {
