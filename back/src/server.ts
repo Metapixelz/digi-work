@@ -1,18 +1,7 @@
 // lib/server.ts
 import * as Sentry from "@sentry/node";
 import App from "./App";
-import {
-    ENABLE_TELEMETRY,
-    SENTRY_DSN,
-    SENTRY_RELEASE,
-    SENTRY_ENVIRONMENT,
-    SENTRY_TRACES_SAMPLE_RATE,
-} from "./Enum/EnvironmentVariable";
-import { telemetryService } from "./Services/TelemetryService";
-
-if (ENABLE_TELEMETRY) {
-    telemetryService.startTelemetry().catch((e) => console.error(e));
-}
+import { SENTRY_DSN, SENTRY_RELEASE, SENTRY_ENVIRONMENT, SENTRY_TRACES_SAMPLE_RATE } from "./Enum/EnvironmentVariable";
 
 // Sentry integration
 if (SENTRY_DSN != undefined) {
